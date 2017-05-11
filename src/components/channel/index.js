@@ -1,14 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './channel.css';
+import Github from '../github';
+import Blog from '../blog';
 
-const Channel = (props) => {
-    console.log(props);
+class Channel extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            class: '',
+            data: {}
+        }
+    } 
+    componentWillReceiveProps(nextProps) {
+        console.log('nextProps: ', nextProps);
+        this.setState({ class: nextProps.class, data: nextProps.data});
+    }
+    
+    render (){
+        let channelComponent = '';
+        switch(this.state.class){
+            case 'github':
+                channelComponent = <Github {...this.state} />;
+            break;
+            case 'blog':
+                channelComponent = <Blog {...this.state} />;
+            break;
+            default:
+            channelComponent = <div></div>
+        }
       return (
-            <div className={'channel ' + `${props.class}`}>
-                <img src={'assets/' + `${props.class}` + '.png'} alt={`${props.class}` + ' icon'} />
-                <p>I'm a channel {props.class}</p>
+            <div className={`channel ${this.state.class}`}>
+                <div>{channelComponent}</div>
             </div>
         );
-}
+    }
+};
 
 export default Channel;

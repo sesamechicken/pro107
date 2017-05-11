@@ -1,0 +1,12 @@
+.github-avatar{
+    max-width: 100px;
+    border-radius: 100%;
+    margin: 1em;
+}
+.github.channel-icon{
+  max-width: 120px;
+}
+.github-detail{
+  float: right;
+  margin: 0 1em;
+}

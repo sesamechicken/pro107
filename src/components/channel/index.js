@@ -23,6 +23,7 @@ class Channel extends Component {
                 channelComponent = <Github {...this.state} />;
             break;
             case 'blog':
+                console.log('passed props to blog: ', this.state)
                 channelComponent = <Blog {...this.state} />;
             break;
             default:

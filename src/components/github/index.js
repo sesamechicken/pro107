@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import './github.css';
 import casualTime from 'casual-time';
+import './github.css';
 
 class Github extends Component {
   constructor(props){
-  console.log('github state', props);
   super(props);
   }
   render() {
-    console.log(this.props);
     const activityType = this.props.data.type === 'CreateEvent' ? 'Created repo' : 'Committed to';
     let userName = this.props.data.actor.display_login;
     let repoName = this.props.data.repo.name;

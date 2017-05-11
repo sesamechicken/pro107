@@ -24,17 +24,17 @@ class Footer extends Component {
     }
     // We need to fetch from GitHub, Twitter, and Blog
     componentDidMount() {
-        let githubData = {};
+        let data = {};
         const fixupState = (data, component) => {
             switch(component){
                 case 'github':
                     this.setState({github: {class: 'github', data: data}});
                     break;
                 case 'twitter':
-                    this.setState({twitter: {class: 'github', data: data}});
+                    this.setState({twitter: {class: 'twitter', data: data}});
                     break;
                 case 'blog':
-                    this.setState({blog: {class: 'github', data: data}});
+                    this.setState({blog: {class: 'blog', data: data}});
                     break;
                 default:
                 break;
@@ -46,10 +46,19 @@ class Footer extends Component {
         .then(function(response) {
             return response.json()
         }).then(function(json) {
-            githubData = json[0];
-            fixupState(githubData, 'github');
-            // 
-            // console.log('parsed json', json[0].payload.commits[0]);
+            data = json[0];
+            fixupState(data, 'github');
+        }).catch(function(ex) {
+            console.log('parsing failed', ex)
+        });
+
+        fetch('http://project107.net/blog/feed/json')
+        .then(function(response) {
+            return response.json()
+        }).then(function(json) {
+            data = json[0];
+            console.log(json)
+            fixupState(data, 'blog');
         }).catch(function(ex) {
             console.log('parsing failed', ex)
         });

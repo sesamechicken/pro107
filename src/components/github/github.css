@@ -1,12 +1,23 @@
-.github-avatar{
-    max-width: 100px;
+.github-avatar {
+    max-width: 100%;
     border-radius: 100%;
-    margin: 1em;
+    margin: 0 auto;
 }
-.github.channel-icon{
-  max-width: 120px;
+.github.channel-icon {
+  max-width: 100%;
 }
-.github-detail{
+.github-detail {
   float: right;
-  margin: 0 1em;
+  color: #eee;
+  text-align: left;
+}
+.github-username {
+  font-style: italic;
+  font-size: 20px;
+}
+.github-detail a {
+  color: yellow;
+}
+.github-timestamp {
+  font-size: .8em;
 }

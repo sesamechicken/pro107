@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import './blog.css';
 
 class Blog extends Component {
   render() {
     return (
       <div>
-        <h1>hi</h1>
+        <img src={require('../../images/wordpress.png')} alt='Blog' className='blog channel-icon' />
+        <div className='blog-detail'>
+
+        </div>
       </div>
     );
   }

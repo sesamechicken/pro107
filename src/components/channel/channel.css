@@ -1,25 +1,28 @@
 .channel {
   padding: 12px;
-  cursor: pointer;
   display: flex;
 }
 
 .channel.github {
   background-color: #333;
   color: #fff;
+  display: flex;
 }
 
 .channel.blog {
   background-color: #f06;
   color: #fff;
+  display: flex;
 }
 
 .channel.about {
   background-color: #fff;
   color: #777;
+  display: flex;
 }
 
 .channel.twitter {
   background-color: #4099FF;
   color: #fff;
+  display: flex;
 }
